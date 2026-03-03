@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<a href="/logout" class="btn btn-danger mb-3">Logout</a>
+
+<table class="table">
+<tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Status</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+
+{% for r in requests %}
+<tr>
+    <td>{{ r.id }}</td>
+    <td>{{ r.username }}</td>
+    <td>{{ r.status }}</td>
+    <td>{{ r.request_date }}</td>
+    <td>
+        <a href="/approve/{{ r.id }}" class="btn btn-success btn-sm">Approve</a>
+        <a href="/reject/{{ r.id }}" class="btn btn-danger btn-sm">Reject</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

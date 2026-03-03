@@ -1,0 +1,10 @@
+
+{% block content %}
+<h2>Login</h2>
+<form method="POST">
+    <input name="username" class="form-control mb-2" placeholder="Username" required>
+    <input name="password" type="password" class="form-control mb-2" placeholder="Password" required>
+    <button class="btn btn-success">Login</button>
+</form>
+<a href="/register">Register</a>
+{% endblock %}
